@@ -5,19 +5,24 @@ function createBot() {
         host: 'SELVER02.aternos.me', 
         port: 23397,
         username: 'Guard_Bot',
-        version: '1.21.1'
+        version: '1.21.11'
     });
 
     bot.on('spawn', () => {
-        console.log('Bot joined!');
+        console.log('Bot joined and is active');
+        
         setInterval(() => {
+            bot.swingArm('right');
             bot.setControlState('jump', true);
             setTimeout(() => bot.setControlState('jump', false), 500);
-        }, 30000); 
+        }, 20000); 
     });
 
     bot.on('error', (err) => console.log(err));
-    bot.on('end', () => setTimeout(createBot, 5000));
+    bot.on('end', () => {
+        console.log('Disconnected, reconnecting...');
+        setTimeout(createBot, 5000);
+    });
 }
 
 createBot();
