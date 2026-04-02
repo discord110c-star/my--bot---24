@@ -5,19 +5,19 @@ const bot = mineflayer.createBot({
     port: 23397,
     username: 'BodyGuard', 
     auth: 'offline',
-    version: false,
-    checkTimeoutInterval: 60000
+    checkTimeoutInterval: 90000,
+    hideErrors: true
 });
 
 bot.on('spawn', () => {
-    console.log('SUCCESS: Bot is in!');
+    console.log('BOT IS IN THE SERVER NOW');
     setInterval(() => {
         bot.swingArm('right');
     }, 10000);
 });
 
 bot.on('error', (err) => {
-    console.log('Error:', err.message);
+    console.log('Error:', err.code);
 });
 
 bot.on('end', () => {
