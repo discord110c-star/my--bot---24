@@ -8,7 +8,6 @@ const bot = mineflayer.createBot({
 });
 
 bot.on('spawn', () => {
-    console.log('Bot joined!');
     setInterval(() => {
         bot.swingArm('right');
         bot.setControlState('jump', true);
