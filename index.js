@@ -4,7 +4,8 @@ const bot = mineflayer.createBot({
     host: 'SELVER02.aternos.me', 
     port: 23397,
     username: 'Guard_Bot',
-    version: '1.21.1' 
+    version: '1.21.1',
+    auth: 'offline'
 });
 
 bot.on('spawn', () => {
