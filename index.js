@@ -3,7 +3,7 @@ const mineflayer = require('mineflayer');
 const bot = mineflayer.createBot({
     host: 'blackfish.aternos.host', 
     port: 23397,
-    username: 'Guard_Bot',
+    username: 'BodyGuard', 
     auth: 'offline',
     checkTimeoutInterval: 60000
 });
