@@ -16,7 +16,7 @@ bot.on('spawn', () => {
 });
 
 bot.on('error', (err) => {
-    console.log('Error:', err.message);
+    console.log('Error details:', err.message);
 });
 
 bot.on('end', () => {
