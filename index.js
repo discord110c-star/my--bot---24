@@ -4,7 +4,7 @@ const bot = mineflayer.createBot({
     host: 'SELVER02.aternos.me', 
     port: 23397,
     username: 'Guard_Bot',
-    version: '1.21.1'
+    version: '1.21.11'
 });
 
 bot.on('spawn', () => {
@@ -17,4 +17,7 @@ bot.on('spawn', () => {
 });
 
 bot.on('error', (err) => console.log(err));
-bot.on('end', () => setTimeout(createBot, 5000));
+
+bot.on('end', () => {
+    console.log('Disconnected');
+});
