@@ -1,21 +1,24 @@
 const mineflayer = require('mineflayer');
 
 const bot = mineflayer.createBot({
-    host: 'SELVER02.aternos.me', 
+    host: 'blackfish.aternos.host', 
     port: 23397,
     username: 'Guard_Bot',
-    version: '1.21.1',
-    auth: 'offline'
+    auth: 'offline',
+    checkTimeoutInterval: 60000
 });
 
 bot.on('spawn', () => {
-    console.log('Bot is online!');
+    console.log('Bot is IN THE SERVER!');
     setInterval(() => {
         bot.swingArm('right');
-        bot.setControlState('jump', true);
-        setTimeout(() => bot.setControlState('jump', false), 500);
-    }, 20000);
+    }, 10000);
 });
 
-bot.on('error', (err) => console.log('Error:', err.message));
-bot.on('end', () => console.log('Bot disconnected'));
+bot.on('error', (err) => {
+    console.log('Error:', err.message);
+});
+
+bot.on('end', () => {
+    console.log('Disconnected... reconnecting');
+});
