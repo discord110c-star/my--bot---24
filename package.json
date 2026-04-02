@@ -1,1 +1,5 @@
-{ "dependencies": { "mineflayer": "^4.20.0" } }
+{
+  "dependencies": {
+    "mineflayer": "^4.20.0"
+  }
+}
