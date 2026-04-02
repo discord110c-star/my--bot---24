@@ -3,21 +3,22 @@ const mineflayer = require('mineflayer');
 const bot = mineflayer.createBot({
     host: 'SELVER02.aternos.me', 
     port: 23397,
-    username: 'Guard_Bot',
-    version: '1.21.11'
+    username: 'Guard_Bot'
 });
 
 bot.on('spawn', () => {
-    console.log('Bot joined successfully!');
+    console.log('Bot is online!');
     setInterval(() => {
         bot.swingArm('right');
         bot.setControlState('jump', true);
         setTimeout(() => bot.setControlState('jump', false), 500);
-    }, 20000); 
+    }, 20000);
 });
 
-bot.on('error', (err) => console.log(err));
+bot.on('error', (err) => {
+    console.log('Error details:', err.message);
+});
 
 bot.on('end', () => {
-    console.log('Disconnected');
+    console.log('Bot disconnected');
 });
