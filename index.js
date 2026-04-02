@@ -4,10 +4,11 @@ const bot = mineflayer.createBot({
     host: 'SELVER02.aternos.me', 
     port: 23397,
     username: 'Guard_Bot',
-    version: '1.21.11'
+    version: '1.21.1'
 });
 
 bot.on('spawn', () => {
+    console.log('Bot joined!');
     setInterval(() => {
         bot.swingArm('right');
         bot.setControlState('jump', true);
