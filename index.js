@@ -8,7 +8,7 @@ const bot = mineflayer.createBot({
 });
 
 bot.on('spawn', () => {
-    console.log('Bot joined!');
+    console.log('Bot joined successfully!');
     setInterval(() => {
         bot.swingArm('right');
         bot.setControlState('jump', true);
@@ -17,4 +17,4 @@ bot.on('spawn', () => {
 });
 
 bot.on('error', (err) => console.log(err));
-bot.on('end', () => console.log('Disconnected'));
+bot.on('end', () => setTimeout(createBot, 5000));
